@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <title>API's Operations</title>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/personalcss.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+    <body>
+	<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Grupo11</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="aux"><a href="/">Home</a></li>
+                <li class="aux"><a href="/profile">Profile</a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" name="searchText" class="form-control" placeholder="Search" style="width:450px; text-align:right;">
+                    <div class="input-group-btn">
+                        <a href="" onclick="return yourFunction(this);">
+                            <button class="btn btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="aux"><a><span class="glyphicon glyphicon-user"></span> Logged as {{id}}</a></li>
+                <li class="aux"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+	<div class="modal-body row" >
+		<div class="col-md-6"  >
+			<h1 align="center">Playlists available</h1>
+            <br>
+			<ul class="pre-scrollable nobullets" role="menu">
+                <form  name="taskForm">
+                {{#each playlists}}
+                    <li>            
+                        <input name="taskRadio" type="radio" id="{{_id}}" value="{{_id}}" />  {{_id}}
+                    </li>
+                {{/each}}
+
+                </form> 
+			</ul> 
+		</div>
+	
+
+<div class="col-md-6 issuesDiv" >
+				<h1 align="center">{{album.name}}</h2>
+				<br>
+				<ul class="pre-scrollable nobulletsStandart" role="menu">
+                <form name="issueForm">
+				{{#each tracks}}
+					<li class="aux">            
+                        <input name="issueCheck" type="checkbox" id="{{_id}}" value="{{description}}" />  {{this.description}}
+                    </li>
+				{{/each}}
+                </form>
+				</ul> 
+        </div>
+	</div>
+    <br>
+    </div>
+        <h4 align="center">Tasks buttons (see faq below to see buttons actions)</h4>
+        <div class="buttonDiv">
+
+            <a href="#" id="insertButton">
+                <input type="button" value="Insert" onClick="insertAction();" style="height:50px; width:100px"/>
+            </a>
+
+        </div>
+        <div>
+            <h2 class="aux1"> FAQ</h2>
+            <p></p>
+            <div class="aux">
+
+                <h4>Botão Insert:</h2>
+                <p>Selecionar uma playlist para adicionar.</p>
+
+            </div>
+        </div>
+
+    <div>
+
+	<script type="text/javascript">
+        function insertAction() {
+            var length=  document.issueForm.issueCheck.length;
+            var first =true;
+            var urlaux = "http://localhost:3000/users/insert?trackid=";
+            for (var i=0; i<length; i++)  {
+                if (document.issueForm.issueCheck[i].checked)  {
+                    if(first) {
+                        urlaux = urlaux + encodeURIComponent(document.issueForm.issueCheck[i].value);
+                        first=false;
+                    }
+                    else urlaux = urlaux + "&trackid=" + encodeURIComponent(document.issueForm.issueCheck[i].value);
+                }
+            }
+            if(length===0 || first===true){
+                return;
+            }            
+            if(document.taskForm.taskRadio.length==undefined){
+                urlaux = urlaux +"&playid="+
+                    encodeURI(document.getElementsByName("taskRadio").item(0).value);
+                
+            }else{
+                for (var i=0; i<document.taskForm.taskRadio.length; i++)  {
+                    if (document.taskForm.taskRadio[i].checked)  {
+                        var found_it = document.taskForm.taskRadio[i].value
+                        urlaux = urlaux + "&playid="+encodeURI(found_it);
+                        break;
+                    }
+                }
+            }
+            urlaux =urlaux + "&current=" + encodeURIComponent(document.URL);
+            document.getElementById("insertButton").href=urlaux;
+
+        
+        }
+
+        function yourFunction(item){
+            var action_src = "http://localhost:3000/search/" + document.getElementsByName("searchText")[0].value;
+            item.href = action_src ;
+            return true;
+        }
+    </script>
+    </body>	
+</html>

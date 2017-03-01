@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <title>Artist and his Albums</title>
+        <link rel="stylesheet" href="/assets/css/personalcss.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/jumbotron.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		    <script>
+        baseurl="http://localhost:3000/"
+        function buildURL(item, number)
+        {
+            if(number==1){
+                item.href=baseurl+"login/"+encodeURIComponent(window.location.href);
+            }
+            else{
+                item.href=baseurl+"signup/"+encodeURIComponent(window.location.href);
+            }
+            return true;
+        }
+        function yourFunction(item){
+            var action_src = "http://localhost:3000/search/" + document.getElementsByName("searchText")[0].value;
+            item.href = action_src ;
+            return true;
+        }
+</script>
+	</head>
+    <body>
+		    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Grupo11</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="aux"><a href="/">Home</a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" name="searchText" class="form-control" placeholder="Search" style="width:450px; text-align:right;">
+                    <div class="input-group-btn">
+                        <a href="" onclick="return yourFunction(this);">
+                            <button class="btn btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="aux"><a onclick="return buildURL(this,2)" href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li class="aux"><a onclick="return buildURL(this,1)"href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+	<div class="modal-body row">
+		<div class="col-md-6" id="artiststhumbnail">
+			<h1 align="center">Elvis Presley</h1>
+			<p></p>
+			<img  src="https://i.scdn.co/image/160c941240375cecbdebfe61033e59783c5172ab" alt="Elvis Presley" style="width:300px;height:300px;" >
+			<p></p>
+			<h3 align="center">Genres</h3>
+			<ul >
+			<li>            
+				christmas
+			</li>
+			<li>            
+				mellow gold
+			</li>
+			<li>            
+				rock
+			</li>
+			<li>            
+				rock-and-roll
+			</li>
+			<li>            
+				rockabilly
+			</li>
+			</ul> 
+		</div>
+	
+		
+        <div class="col-md-6">
+				<h2 align="center">Artist's albums</h2>
+				<p></p>
+				<p></p>
+				<ul class="pre-scrollable" role="menu">
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/6oWz2hJ89n9mKarg3SO9ou">
+                                <img src="https://i.scdn.co/image/a07ca4453d11da5c73239a936aa154238106fd68" alt="The Wonder of You: Elvis Presley with the Royal Philharmonic Orchestra" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/6oWz2hJ89n9mKarg3SO9ou">The Wonder of You: Elvis Presley with the Royal Philharmonic Orchestra</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/2kTL2bkqCBKBTLzXfZPGF7">
+                                <img src="https://i.scdn.co/image/eb8a80a5d7f3d9adab42010c1f8d33cab4a355d1" alt="The Wonder of You: Elvis Presley with the Royal Philharmonic Orchestra" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/2kTL2bkqCBKBTLzXfZPGF7">The Wonder of You: Elvis Presley with the Royal Philharmonic Orchestra</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/0aDuEoOhb33KsJjfkaqaCr">
+                                <img src="https://i.scdn.co/image/63785eaa79288c513ca7e55cf1803e02dad78ffd" alt="Way Down in the Jungle Room" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/0aDuEoOhb33KsJjfkaqaCr">Way Down in the Jungle Room</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/3hnTlNIWecT7V0IkxWHeqS">
+                                <img src="https://i.scdn.co/image/03aa67328bc2a44fb33c62f95ac2847d6903b940" alt="If I Can Dream: Elvis Presley with the Royal Philharmonic Orchestra" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/3hnTlNIWecT7V0IkxWHeqS">If I Can Dream: Elvis Presley with the Royal Philharmonic Orchestra</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/3BYCjGZjrTkilIY7U25fNt">
+                                <img src="https://i.scdn.co/image/6a006f9692ef28ba5ec40b5fa1af360c95add223" alt="If I Can Dream: Elvis Presley with the Royal Philharmonic Orchestra" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/3BYCjGZjrTkilIY7U25fNt">If I Can Dream: Elvis Presley with the Royal Philharmonic Orchestra</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/19yJZs4lfwZyHKXvd81PJB">
+                                <img src="https://i.scdn.co/image/742cebe9e9a95772658c586d853e171ad216bd2a" alt="If I Can Dream: Elvis Presley with the Royal Philharmonic Orchestra" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/19yJZs4lfwZyHKXvd81PJB">If I Can Dream: Elvis Presley with the Royal Philharmonic Orchestra</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/72JUDHA3dSkfD0Wzz1f4eu">
+                                <img src="https://i.scdn.co/image/7967fdd15a67addfa31e0740c9be7286a732248a" alt="Eiichi Ohtaki&#x27;s Juke Box - Elvis Presley Edition" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/72JUDHA3dSkfD0Wzz1f4eu">Eiichi Ohtaki&#x27;s Juke Box - Elvis Presley Edition</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/3EHxFLhmgSGEBmJ7tFXwRz">
+                                <img src="https://i.scdn.co/image/a6c456c293271eabf75786d36a18333d2f1ad2dc" alt="Elvis At Stax" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/3EHxFLhmgSGEBmJ7tFXwRz">Elvis At Stax</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/1GX2nOfzF9HpmuikfC7BrQ">
+                                <img src="https://i.scdn.co/image/0dadaefde9f929ed7293f6a92d7c664a14a2dc7a" alt="Prince From Another Planet (Live)" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/1GX2nOfzF9HpmuikfC7BrQ">Prince From Another Planet (Live)</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/6fddObHe1ReycIFZgATlvk">
+                                <img src="https://i.scdn.co/image/d696177691173d480bcabe21660e0a7aca86b9ee" alt="Viva Elvis" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/6fddObHe1ReycIFZgATlvk">Viva Elvis</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/4s9av7NxzjUbvQl5h9S2BN">
+                                <img src="https://i.scdn.co/image/3ec6509988d199ab7927ef7aa9764dedd069b3c0" alt="Viva Elvis" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/4s9av7NxzjUbvQl5h9S2BN">Viva Elvis</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/7emjXb3cLlHccm2xY5ntCg">
+                                <img src="https://i.scdn.co/image/176e1e6d8d21e5d9936aabb29396062eed2328f3" alt="The Complete &#x27;68 Comeback Special- The 40th Anniversary Edition" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/7emjXb3cLlHccm2xY5ntCg">The Complete &#x27;68 Comeback Special- The 40th Anniversary Edition</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/3V9kEPY93tqrMkTksmgrXH">
+                                <img src="https://i.scdn.co/image/13051d9bb68df90abeb8cd3ddd6802fe795decad" alt="The Complete &#x27;68 Comeback Special- The 40th Anniversary Edition" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/3V9kEPY93tqrMkTksmgrXH">The Complete &#x27;68 Comeback Special- The 40th Anniversary Edition</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/2w9qV3ELWjmpGBDxBPmYif">
+                                <img src="https://i.scdn.co/image/cb69ba11364a92bd4ec947d1997baf17131e38ba" alt="Elvis At Sun" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/2w9qV3ELWjmpGBDxBPmYif">Elvis At Sun</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/3kBT5ef0KWAuZokS4IWV7C">
+                                <img src="https://i.scdn.co/image/6989afa93afba2d994b7686dcbb14daeabd4a91f" alt="Elvis: Close Up" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/3kBT5ef0KWAuZokS4IWV7C">Elvis: Close Up</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/3O7z4kPJ3LlowdWvyeHWpS">
+                                <img src="https://i.scdn.co/image/ab10eaedf9c6a71e45ac06229da909d6117c5221" alt="Today, Tomorrow and Forever" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/3O7z4kPJ3LlowdWvyeHWpS">Today, Tomorrow and Forever</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/0JOMJbodZoABFEFLJGKJYC">
+                                <img src="https://i.scdn.co/image/64bfe2693eb08bf36a041e6548c367f32e6bce85" alt="Live In Las Vegas" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/0JOMJbodZoABFEFLJGKJYC">Live In Las Vegas</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/0gv5aiVS1WBUZOKeb7YawE">
+                                <img src="https://i.scdn.co/image/1791c93ee648dc72d1f79d77e9d358f6900c3e54" alt="Platinum - A Life In Music" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/0gv5aiVS1WBUZOKeb7YawE">Platinum - A Life In Music</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/0x4L4I1Bl5joTe30wThvKS">
+                                <img src="https://i.scdn.co/image/48b6e9fdbe95f5794f184c8835bb67b5b8bddc38" alt="An Afternoon in The Garden (Live)" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/0x4L4I1Bl5joTe30wThvKS">An Afternoon in The Garden (Live)</a></p>
+						</div >
+					</li>
+					<li >            
+						<div class="col-md-12" >
+							<a href="/albums/3jEgFCvP4h9ENjnoyystsy">
+                                <img src="https://i.scdn.co/image/2db48586e044620ca0275521d00ecba2faf13f94" alt="Elvis: As Recorded at Madison Square Garden" style="width:200px;height:200px;">
+                            </a>
+							<p class="center"> <a href="/albums/3jEgFCvP4h9ENjnoyystsy">Elvis: As Recorded at Madison Square Garden</a></p>
+						</div >
+					</li>
+				</ul> 
+        </div>
+	</div>
+		
+    </body>	
+</html>

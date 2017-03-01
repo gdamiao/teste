@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <title>Artist and his Albums</title>
+        <link rel="stylesheet" href="/assets/css/personalcss.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/jumbotron.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		    <script>
+        baseurl="http://localhost:3000/"
+        function buildURL(item, number)
+        {
+            if(number==1){
+                item.href=baseurl+"login/"+encodeURIComponent(window.location.href);
+            }
+            else{
+                item.href=baseurl+"signup/"+encodeURIComponent(window.location.href);
+            }
+            return true;
+        }
+        function yourFunction(item){
+            var action_src = "http://localhost:3000/search/" + document.getElementsByName("searchText")[0].value;
+            item.href = action_src ;
+            return true;
+        }
+</script>
+	</head>
+    <body>
+		    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Grupo11</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="aux"><a href="/">Home</a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" name="searchText" class="form-control" placeholder="Search" style="width:450px; text-align:right;">
+                    <div class="input-group-btn">
+                        <a href="" onclick="return yourFunction(this);">
+                            <button class="btn btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="aux"><a onclick="return buildURL(this,2)" href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li class="aux"><a onclick="return buildURL(this,1)"href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+	<div class="modal-body row">
+		<div class="col-md-6" id="artiststhumbnail">
+			<h1 align="center">The Wonder of You: Elvis Presley with the Royal Philharmonic Orchestra</h1>
+			<p></p>
+			<img  src="https://i.scdn.co/image/a07ca4453d11da5c73239a936aa154238106fd68" alt="The Wonder of You: Elvis Presley with the Royal Philharmonic Orchestra" style="width:300px;height:300px;" >
+			<p></p>
+			<h3 align="center">Genres</h3>
+			<ul >
+			</ul> 
+		</div>
+	
+		
+        <div class="col-md-6">
+				<h2 align="center">Album Tracks</h2>
+				<p></p>
+				<p></p>
+
+
+                 <table class="pre-scrollable" role="menu" style="width:100%">
+                    <tr>
+                        <th class="trackTable">Nr Disco</th>
+                        <th class="trackTable">Nr Track</th>
+                        <th class="trackTable">Nome Musica</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">1</th>
+                        <td align="center">A Big Hunk o&#x27; Love</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">2</th>
+                        <td align="center">I&#x27;ve Got a Thing About You Baby</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">3</th>
+                        <td align="center">Suspicious Minds</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">4</th>
+                        <td align="center">Don&#x27;t</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">5</th>
+                        <td align="center">I Just Can&#x27;t Help Believin&#x27;</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">6</th>
+                        <td align="center">Just Pretend</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">7</th>
+                        <td align="center">Love Letters</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">8</th>
+                        <td align="center">Amazing Grace</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">9</th>
+                        <td align="center">Starting Today</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">10</th>
+                        <td align="center">Kentucky Rain</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">11</th>
+                        <td align="center">Memories</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">12</th>
+                        <td align="center">Let It Be Me</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">13</th>
+                        <td align="center">Always on My Mind</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">14</th>
+                        <td align="center">The Wonder of You</th>
+                    </tr>
+                    <tr>
+                        <td align="center">1</th>
+                        <td align="center">15</th>
+                        <td align="center">Just Pretend</th>
+                    </tr>
+                </table> 
+        </div>
+	</div>
+		
+    </body>	
+</html>
