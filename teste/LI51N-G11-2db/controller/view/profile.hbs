@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <title>Artist and his Albums</title>
+        <link rel="stylesheet" href="/assets/css/personalcss.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/profilepopup.css">
+        <link rel="stylesheet" href="/assets/css/profilesidebar.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/assets/profileOps.js">
+        </script>
+	</head>
+    <body>
+
+	<nav class="navbar navbar-inverse profilenavbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Grupo11</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="aux"><a href="/">Home</a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" name="searchText" class="form-control" placeholder="Search" style="width:450px; text-align:right;">
+                    <div class="input-group-btn">
+                        <a href="" onclick="return yourFunction(this);">
+                            <button class="btn btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="aux"><a id="username" name="{{id}}"><span class="glyphicon glyphicon-user"></span> Logged as {{id}}</a></li>
+                <li class="aux"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+ <div id="wrapper">
+
+         <!-- Sidebar -->
+        <div class="navbar" id="sidebar-wrapper">
+            <ul id="menu-group-1" class="sidebar-nav menu">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        <font size="3">
+                            Profile:
+                        </font>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:playlistsOption()">&nbsp;&nbsp;&nbsp;Playlists</a>
+                </li>
+                <li>
+                    <a href="javascript:invitesOption()">&nbsp;&nbsp;&nbsp;Invites  <span id="invUpdate" class="badge">{{invites}}</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div id="popupsDiv">
+                <div id='addForm' style="display:none">
+                <!-- Popup Div Starts Here -->
+                    <div id="popupContact" style="text-align:center">
+                    <!-- Contact Us Form -->
+                        <form action="#" id="popupForm" method="post" name="form">
+                            <img id="close" name="addForm" src="http://www.megaicons.net/static/img/icons_sizes/314/810/256/actions-dialog-close-icon.png" onclick ="div_hide(this); return false;">
+                            <h2 id="popupH2">Create Playlist</h2>
+                            <hr id="popupHR">
+                            <input id="addInput" name="name" placeholder="Playlist Name" type="text" >
+                            <br><br><br>
+                            <a href="#" onclick="return create_list(this);" name="addForm" id="submitPopup">Create</a>
+
+                        </form>
+                    </div>
+                <!-- Popup Div Ends Here -->
+                </div>
+                <div id="deleteForm" style="display:none">
+                <!-- Popup Div Starts Here -->
+                    <div id="popupContact" style="text-align:center">
+                    <!-- Contact Us Form -->
+                        <form action="#" id="popupForm" method="post" name="form">
+                            <img id="close" name="deleteForm" src="http://www.megaicons.net/static/img/icons_sizes/314/810/256/actions-dialog-close-icon.png" onclick ="div_hide(this); return false;">
+                            <h2 id="popupH2">Delete Playlist</h2>
+                            <hr id="popupHR">
+                            <input id="deleteInput" name="name" placeholder="Playlist Name" type="text" >
+                            <br><br><br>
+                            <a href="#" onclick="return delete_list(this);" name="deleteForm" id="submitPopup">Delete</a>
+
+                        </form>
+                    </div>
+                <!-- Popup Div Ends Here -->
+                </div>
+                <div id="renameForm" style="display:none">
+                <!-- Popup Div Starts Here -->
+                    <div id="popupContact" style="text-align:center">
+                    <!-- Contact Us Form -->
+                        <form action="#" id="popupForm" method="post" name="form">
+                            <img id="close" name="renameForm" src="http://www.megaicons.net/static/img/icons_sizes/314/810/256/actions-dialog-close-icon.png" onclick ="div_hide(this); return false;">
+                            <h2 id="popupH2">Rename Playlist</h2>
+                            <hr id="popupHR">
+                            <input id="renameOld" name="name" placeholder="Playlist old name" type="text" >
+                            <input id="renameNew" name="email" placeholder="Playlist new name" type="text">
+                            <br><br><br>
+                            <a onclick="rename_list(this); return false;" name="renameForm" id="submitPopup">Rename</a>
+
+                        </form>
+                    </div>
+                <!-- Popup Div Ends Here -->
+                </div>
+                <div id="shareForm" style="display:none">
+                <!-- Popup Div Starts Here -->
+                    <div id="popupContact" style="text-align:center">
+                    <!-- Contact Us Form -->
+                        <form action="#" id="popupForm" method="post" name="form">
+                            <img id="close" name="shareForm" src="http://www.megaicons.net/static/img/icons_sizes/314/810/256/actions-dialog-close-icon.png" onclick ="div_hide(this); return false;">
+                            <h2 id="popupH2">Share Playlist</h2>
+                            <hr id="popupHR">
+                            <input id="shareUser" name="name" placeholder="User to share with" type="text"/>
+                            <input id="sharePlaylist" name="email" placeholder="Playlist name" type="text"/>
+                            <p>Permissions:</p>
+                            <input id="readPermission" name="perms" type="radio" />Read <input id="readwritePermission" name="perms"  type="radio"/> Read/Write
+                            <br><br>
+                            <a onclick="share_playlist(this); return false;" name="shareForm" id="submitPopup">Share</a>
+
+                        </form>
+                    </div>
+                <!-- Popup Div Ends Here -->
+                </div>
+                <div id="unshareForm" style="display:none">
+                <!-- Popup Div Starts Here -->
+                    <div id="popupContact" style="text-align:center">
+                    <!-- Contact Us Form -->
+                        <form action="#" id="popupForm" method="post" name="form">
+                            <img id="close" name="unshareForm" src="http://www.megaicons.net/static/img/icons_sizes/314/810/256/actions-dialog-close-icon.png" onclick ="div_hide(this); return false;">
+                            <h2 id="popupH2">Unshare Playlist</h2>
+                            <hr id="popupHR">
+                            <input id="unshareUser" name="name" placeholder="User to Unshare" type="text" >
+                            <input id="unsharePlaylist" name="email" placeholder="Playlist name" type="text">
+                            <br><br><br>
+                            <a onclick="unshare_playlist(this); return false;" name="unshareForm" id="submitPopup">Unshare</a>
+
+                        </form>
+                    </div>
+                <!-- Popup Div Ends Here-->
+                </div>
+                <div id="deleteSongsButton" style="display:none">
+                <!-- Popup Div Starts Here -->
+                    <div id="popupContact" style="text-align:center">
+                    <!-- Contact Us Form -->
+                        <form action="#" id="popupForm" name="form">
+                            <img id="close" name="deleteSongsButton" src="http://www.megaicons.net/static/img/icons_sizes/314/810/256/actions-dialog-close-icon.png" onclick ="div_hide(this); return false;">
+                            <h2 id="popupH2">Delete selected Songs?</h2>
+                            <br><br>
+                            <a onclick="delete_songs(this); return false;" name="deleteSongsButton" id="submitPopup">Confirm</a>
+
+                        </form>
+                    </div>
+                <!-- Popup Div Ends Here deleteSongsButton-->
+                </div>
+            </div>
+            <div id="buttons">
+                <h4 align="center">Tasks buttons (see faq below to see buttons actions)</h4>
+                <div class="buttonDiv">
+                    <a id="createButton">
+                        <input type="button" value="Create List" name="addForm" onclick="div_show(this); return false;" style="height:50px; width:100px" />
+                    </a>
+
+                    <a href="#" id="deleteButton">
+                        <input type="button" value="Delete List" name="deleteForm" onclick="div_show(this); return false;" style="height:50px; width:100px"/>
+                    </a>
+                    <a href="#" id="renameButton">
+                        <input type="button" value="Rename List" name="renameForm" onclick="div_show(this); return false;" style="height:50px; width:100px"/>
+                    </a>
+                    <a href="#" id="shareButton">
+                        <input type="button" value="Share List" name="shareForm" onclick="div_show(this); return false;" style="height:50px; width:100px"/>
+                    </a>
+                    <a href="#" id="unshareButton">
+                        <input type="button" value="Unshare List" name="unshareForm" onclick="div_show(this); return false;" style="height:50px; width:100px"/>
+                    </a>
+                    <a href="#" id="deleteSongsButton">
+                        <input type="button" value="Delete Songs" name="deleteSongsButton" onclick="div_show(this); return false;" style="height:50px; width:100px"/>
+                    </a>
+                    
+                </div>
+            </div>
+            <div id="playlists" class="col-md-6 issuesDiv" >
+                <h1 align="center">Playlists</h1>
+                <br>
+                    <div id="playlistsList">
+                        <ul class="pre-scrollable nobullets" role="menu">
+                            <form name="playlistForm">
+                            {{#each playlists}}
+                                <li>            
+                                    <input name="taskRadio" onchange="showSongs(this);return false;" onkeypress="showSongs(this);return false;" type="radio" id="{{_id}}" value="{{_id}}"/>  {{_id}}
+                                </li>
+                            {{/each}}
+                            </form>
+                        </ul>
+                    </div> 
+            </div>
+            <div id="songs" class="col-md-6 issuesDiv" style="height: 200px">
+                <h1 align="center">Songs</h1>
+                <br>
+                <div id="songsList">
+                </div> 
+            </div>
+            <div >
+                <br><br>
+                <h3 style="font-family:Garamond">-FAQ</h3>
+                <h4 style="font-family:Didot">&nbsp;Create List:</h4>
+                <p>&nbsp;Creates a list with the specified name</p>
+                <h4 style="font-family:Didot">&nbsp;Delete List:</h4>
+                <p>&nbsp;Deletes a list with he specified name</p>
+                <h4 style="font-family:Didot">&nbsp;Rename List:</h4>
+                <p>&nbsp;Renames a list with he specified name</p>
+                <h4 style="font-family:Didot">&nbsp;Share List:</h4>
+                <p>&nbsp;Sends an invitation to share the specified playlist to the specified user</p>
+                <h4 style="font-family:Didot">&nbsp;Unshare List:</h4>
+                <p>&nbsp;Unshares the playlist or removes a sharing invitation of the specified playist of the specified user</p>
+                <h4 style="font-family:Didot">&nbsp;Delete songs:</h4>
+                <p>&nbsp;Delete the selected songs of the selected playlist</p>
+		    </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    </body>	
+</html>

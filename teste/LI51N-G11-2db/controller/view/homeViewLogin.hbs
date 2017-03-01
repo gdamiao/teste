@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+	<link rel="stylesheet" href="/assets/css/personalcss.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">        
+        function yourFunction(item){
+            var action_src = "http://localhost:3000/search/" + document.getElementsByName("searchText")[0].value;
+            item.href = action_src ;
+            return true;
+        }
+        function buildURL(item)
+        {
+                item.href="logout/"+encodeURIComponent(window.location.href);
+
+        }
+    </script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Grupo11</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li class="aux"><a href="/profile">Profile <span class="badge">{{invites}}</span></a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" name="searchText" class="form-control" placeholder="Search" style="width:450px; text-align:right;">
+                    <div class="input-group-btn">
+                        <a href="" onclick="return yourFunction(this);">
+                            <button class="btn btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a><span class="glyphicon glyphicon-user"></span> Logged as {{id}}</a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class='wrapper'>
+        <h2 style="font-family:Didot">Trabalho Parte 2 Programação de Internet Grupo 11</h2>
+        <p style="font-family:Arial; font-size:15px">Para utilizar a aplicação realizada pode simplesmente dar search da sua banda/artista preferida na barra</p>
+        <p style="font-family:Arial; font-size:15px">de search no top da página. Assim consegue ver os albuns e as  musicas respectivas das bandas/artistas escolhidos.</p>
+        <p style="font-family:Arial; font-size:15px">No entanto, pode tambem dar sign up no botão em baixo (ou login na barra em cima no caso de já possuir conta) </p>
+        <p style="font-family:Arial; font-size:15px">de maneira a criar as suas playlists pessoais onde poderá adicionar músicas à escolha.</p>
+		<br><br>
+        <form action="http://localhost:8080/logout">
+                <a href="/logout"><input type="button" value="Logout" style="height:100px; width:150px" /></a>
+        </form>
+    </div>
+    <br><br><br>
+    <div class="div1">
+        <h3 style="font-family:Didot">Docentes:</h3>
+         <ul>
+            <li class="aux" >Luis Falcão</li>
+        </ul> 
+    </div>
+    <div class="div2">
+        <h3 align='left' style="font-family:Didot">Discentes:</h4>
+         <ul>
+            <li class="aux">Gonçalo Ricardo Damião 40543</li>
+            <li class="aux">Ana Rita Ferreira Monteiro 40543</li>
+        </ul> 
+    </div>
+</body>
+</html>

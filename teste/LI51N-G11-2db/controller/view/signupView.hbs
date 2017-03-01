@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <title>Artist and his Albums</title>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/jumbotron.css">
+        <link rel="stylesheet" href="/assets/css/personalcss.css">
+	</head>
+
+    <script>
+        var baseurl="http://localhost:3000/"
+        function buildURL(item, aux)
+        {
+
+                item.href=baseurl+"login/"+encodeURIComponent(aux);
+
+            return true;
+        };
+
+        function createurl(item, aux){
+                var urlinfo="/signup/";
+                if(!(aux==="")){
+                    urlinfo = urlinfo + encodeURIComponent(aux);
+                }
+                var xhttp;
+                if (window.XMLHttpRequest) {
+                    xhttp = new XMLHttpRequest();
+                    } else {
+                    // code for IE6, IE5
+                    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.open('text/html')
+                        document.write(this.responseText);
+                        document.close();
+                    }
+                    if (this.readyState == 4 && this.status == 500) {
+                        alert("user already exists")
+                    }
+                };
+                xhttp.open("post",urlinfo,true);
+                xhttp.setRequestHeader("Content-type", "application/json");
+                var user = document.getElementById("username").value;
+                var pass = document.getElementById("password").value;
+                var nameaux = document.getElementById("name").value;
+                var emailaux = document.getElementById("email").value;
+                xhttp.send(JSON.stringify({username:user,password:pass,email:email,emailaux:nameaux}));
+            };
+
+    </script>
+
+    <body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Sign in to continue to previous page</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                <form class="form-signin" name="signupForm" onSubmit="return false;" >
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required autofocus>
+                    <input type="text" class="form-control" id="name" name="nome" placeholder="Nome" required autofocus>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required autofocus>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    <a onclick="createurl(this, &quot;{{previous}}&quot;);"> <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Sign in</button></a>
+                </form>
+            </div>
+            <a href="" onclick="return buildURL(this,&quot;{{previous}}&quot;);" class="text-center new-account">Login on your account </a>
+            <a href="{{previous}}" class="text-center new-account">Back </a>
+        </div>
+    </div>
+</div>
+
+
+    </body>	
+</html>

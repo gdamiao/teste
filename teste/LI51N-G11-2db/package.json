@@ -1,0 +1,44 @@
+{
+  "name": "spotifyapp",
+  "version": "1.0.3",
+  "description": "web app",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isel-leic-pi/LI51D-G11.git"
+  },
+  "author": "group11",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isel-leic-pi/LI51D-G11/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-controller": "^1.2.0",
+    "cookie-parser": "^1.4.3",
+    "crypto-js": "^3.1.8",
+    "debug": "^2.6.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "fs": "0.0.1-security",
+    "handlebars": "^4.0.6",
+    "hbs": "^4.0.1",
+    "morgan": "^1.8.1",
+    "nano": "^6.2.0",
+    "node-couchdb": "^1.1.0",
+    "node-fetch": "^1.6.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-strategy": "^1.0.0",
+    "serve-favicon": "^2.3.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "homepage": "https://github.com/isel-leic-pi/LI51D-G11#readme",
+  "bin": {
+    "spotifyapp": "server.js"
+  },
+  "devDependencies": {},
+  "keywords": []
+}

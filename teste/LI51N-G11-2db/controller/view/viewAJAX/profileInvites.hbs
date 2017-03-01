@@ -1,0 +1,29 @@
+
+<div id="invites" class="col-md-6 issuesDiv">
+    <h1 align="center">Invites</h1>
+    <br>
+    <table id="invitesTable" style="width:100%; text-align:center">
+        <tr id="tableheaders">
+            <th height="60" style="text-align: center; vertical-align: center">User Invitation</th>
+            <th height="60" style="text-align: center">Playlist name</th>
+            <th height="60" style="text-align: center">Permissions</th>
+            <th height="60" style="text-align: center">Accept Button</th>
+            <th height="60" style="text-align: center">Decline Button</th>
+        </tr>
+        {{#each invites }}
+        <tr style="text-align:center" id="{{id}}TR">
+            <td height="50">{{username}}</td>
+            <td height="50"><input name="taskRadio" onchange="getSharedSongsDiv(this);return false;" type="radio" id="{{id}}" />  {{playlist}}</td>
+            <td height="50">{{permissions}}</td>
+            <td height="50"><button onclick="acceptShareInvite(this);" id="{{id}}" class="item">Accept</button></td>
+            <td height="50"><button onclick="deleteShareInvite(this);" id="{{id}}" class="item">Decline</button></td>
+        </tr>
+        {{/each}}
+    </table> 
+</div>
+<div id="songs" class="col-md-6 issuesDiv" >
+        <h1 align="center">Songs of the selected playlist</h1>
+        <br>
+        <div id="songsList">
+        </div> 
+</div>

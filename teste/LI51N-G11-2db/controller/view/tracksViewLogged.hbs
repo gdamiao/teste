@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <title>Artist and his Albums</title>
+        <link rel="stylesheet" href="/assets/css/personalcss.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/jumbotron.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		    <script>
+        baseurl="http://localhost:3000/"
+        function buildURL(item, number)
+        {
+            if(number==1){
+                item.href=baseurl+"login/"+encodeURIComponent(window.location.href);
+            }
+            else{
+                item.href=baseurl+"signup/"+encodeURIComponent(window.location.href);
+            }
+            return true;
+        }
+        function yourFunction(item){
+            var action_src = "http://localhost:3000/search/" + document.getElementsByName("searchText")[0].value;
+            item.href = action_src ;
+            return true;
+        }
+</script>
+	</head>
+    <body>
+		    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Grupo11</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="aux"><a href="/">Home</a></li>
+                <li class="aux"><a href="/profile">Profile</a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" name="searchText" class="form-control" placeholder="Search" style="width:450px; text-align:right;">
+                    <div class="input-group-btn">
+                        <a href="" onclick="return yourFunction(this);">
+                            <button class="btn btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="aux"><a><span class="glyphicon glyphicon-user"></span> Logged as {{id}}</a></li>
+                <li class="aux"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+	<div class="modal-body row">
+		<div class="col-md-6" id="artiststhumbnail">
+			<h1 align="center">{{album.name}}</h1>
+			<p></p>
+			<img  src="{{album.url}}" id="{{album.id}}" alt="{{album.name}}" style="width:300px;height:300px;" >
+			<p></p>
+			<h3 align="center">Genres</h3>
+			<ul >
+			{{#each album.genres}}
+			<li>            
+				{{this}}
+			</li>
+			{{/each}}
+			</ul> 
+		</div>
+	
+		
+        <div class="col-md-6">
+				<h2 align="center">Album Tracks</h2>
+                <h4 align="center"><a href="http://localhost:3000/users/addingTracks/{{album.id}}">Click para adicionar músicas deste album a uma das suas playlists!</a><h4>
+				<p></p>
+				<p></p>
+
+
+                 <table class="pre-scrollable" role="menu" style="width:100%">
+                    <tr>
+                        <th class="trackTable">Nr Disco</th>
+                        <th class="trackTable">Nr Track</th>
+                        <th class="trackTable">Nome Musica</th>
+                    </tr>
+                    {{#each tracks}}
+                    <tr>
+                        <td align="center">{{disc_number}}</th>
+                        <td align="center">{{track_number}}</th>
+                        <td align="center">{{name}}</th>
+                    </tr>
+                    {{/each}}
+                </table> 
+        </div>
+	</div>
+		
+    </body>	
+</html>

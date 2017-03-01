@@ -1,0 +1,9 @@
+<ul class="pre-scrollable nobullets" role="menu">
+    <form name="playlistForm">
+    {{#each playlists}}
+        <li>            
+            <input name="taskRadio" onchange="showSongs(this);return false;" onkeypress="showSongs(this);return false;" type="radio" id="{{_id}}" value="{{_id}}"/>  {{_id}}
+        </li>
+    {{/each}}
+    </form>
+</ul>

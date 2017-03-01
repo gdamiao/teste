@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Search Page</title>
+		<link rel="stylesheet" href="/assets/css/personalcss.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/jumbotron.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		    <script>
+        baseurl="http://localhost:3000/"
+        function buildURL(item, number)
+        {
+            if(number==1){
+                item.href=baseurl+"login/"+encodeURIComponent(window.location.href);
+            }
+            else{
+                item.href=baseurl+"signup/"+encodeURIComponent(window.location.href);
+            }
+            return true;
+        }
+        function yourFunction(item){
+            var action_src = "http://localhost:3000/search/" + document.getElementsByName("searchText")[0].value;
+            item.href = action_src ;
+            return true;
+        }
+</script>
+	</head>
+    <body>
+		    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Grupo11</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="aux"><a href="/">Home</a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" name="searchText" class="form-control" placeholder="Search" style="width:450px; text-align:right;">
+                    <div class="input-group-btn">
+                        <a href="" onclick="return yourFunction(this);">
+                            <button class="btn btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="aux"><a onclick="return buildURL(this,2)" href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li class="aux"><a onclick="return buildURL(this,1)"href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+		<h1 align="center"><b>Your search :</b> "metal"</h1> 
+        <div class="container well img-with-text" >
+				<div>
+					<ul>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/02uYdhMhCgdB49hZlYRm9o">
+									<img src="https://i.scdn.co/image/d06929a1795796594753fafacc916137ad1b35f6" alt="Eagles Of Death Metal" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/02uYdhMhCgdB49hZlYRm9o"> Eagles Of Death Metal</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/0exvkfkATkqWOJgugTjJhP">
+									<img src="https://i.scdn.co/image/3564761db8ab96e50f3c2ea83e29bd729d1b19b6" alt="Metal Church" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/0exvkfkATkqWOJgugTjJhP"> Metal Church</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/0IEGX6fzfleIrNpNnv5L1e">
+									<img src="https://i.scdn.co/image/ae7b703bb281f65a61380cbb38251a0808858e05" alt="Metal Mother" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/0IEGX6fzfleIrNpNnv5L1e"> Metal Mother</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/1VcMD6LWUacsOs71ALLvI7">
+									<img src="https://i.scdn.co/image/483aba2395831243ce2ba43a913a388a66c4e600" alt="Metroid Metal" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/1VcMD6LWUacsOs71ALLvI7"> Metroid Metal</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/6LPp1ErCecDVz9VefIgEAA">
+									<img src="https://i.scdn.co/image/47d4479fc3b9ffe20a2ae36eb648d444b7338f9e" alt="Grupo Metal" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/6LPp1ErCecDVz9VefIgEAA"> Grupo Metal</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/1wxMIkp7kqcG25445NGNQ4">
+									<img src="https://i.scdn.co/image/196850d10ef3bcbcddc600fad80b50e2674e2ef0" alt="Massive Metal Covers" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/1wxMIkp7kqcG25445NGNQ4"> Massive Metal Covers</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/0sXYVX5YawB0db8GYfGyPm">
+									<img src="http://www.instrumentationtoday.com/wp-content/themes/patus/images/no-image-half-landscape.png" alt="Marly Metal" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/0sXYVX5YawB0db8GYfGyPm"> Marly Metal</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/2V7yutaZpXtKrhqIQ6I9Rv">
+									<img src="https://i.scdn.co/image/d2b6d07307f7dce8bb248fb04212b557a2d87b54" alt="Heavy Metal Ninjas" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/2V7yutaZpXtKrhqIQ6I9Rv"> Heavy Metal Ninjas</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/0WMCrmC96IpOteF4W4mZ3v">
+									<img src="https://i.scdn.co/image/801b7ad219dc5a7fce91098c0f8b8ec29e3fcf92" alt="Metal Allegiance" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/0WMCrmC96IpOteF4W4mZ3v"> Metal Allegiance</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/5kcL6tVVEBIgiHkXW9JVWo">
+									<img src="https://i.scdn.co/image/c8c843d3c5097d7ceeb209799a68f22c39fc5224" alt="Swedish Hitz Goes Metal" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/5kcL6tVVEBIgiHkXW9JVWo"> Swedish Hitz Goes Metal</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/6VBz1sCquAUs6AskeHyTbw">
+									<img src="https://i.scdn.co/image/f6839a886b77cc2063fd40a8f45b682017217263" alt="Adam B. Metal" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/6VBz1sCquAUs6AskeHyTbw"> Adam B. Metal</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/4DizkDPCyJbWCpeMLtkiHr">
+									<img src="https://i.scdn.co/image/7f1911511824920e64748c1ed1ab9b608e914a28" alt="Metal Wings" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/4DizkDPCyJbWCpeMLtkiHr"> Metal Wings</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/6TZLwu0dAvkmzZfzoA2ZEE">
+									<img src="https://i.scdn.co/image/33447f2eb39f8c29dfaa1288a79c0ea75934a7a2" alt="Metal Saxo Band" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/6TZLwu0dAvkmzZfzoA2ZEE"> Metal Saxo Band</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/1NASeUhQgFlgnDKFvGYGxU">
+									<img src="http://www.instrumentationtoday.com/wp-content/themes/patus/images/no-image-half-landscape.png" alt="Metal Norteño" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/1NASeUhQgFlgnDKFvGYGxU"> Metal Norteño</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/0q1Nx41aWpZqanF9sK0O9A">
+									<img src="https://i.scdn.co/image/914c1ca2ec939cd5600a8fadd63b79a29fe5956e" alt="Mikkel Metal" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/0q1Nx41aWpZqanF9sK0O9A"> Mikkel Metal</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/5iavde19ShHeZwLHERvAJ9">
+									<img src="https://i.scdn.co/image/5fb6ea446305b9cda524d8f213d8e6f8c0e41377" alt="Metal Hearts" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/5iavde19ShHeZwLHERvAJ9"> Metal Hearts</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/0WPCPYm5IDNtQjuJOGNPcy">
+									<img src="https://i.scdn.co/image/010570a9fc91043f51568ac018928c7677722fe6" alt="Brothers of Metal" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/0WPCPYm5IDNtQjuJOGNPcy"> Brothers of Metal</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/01BFjzKJQLgIZFhLHH4MNp">
+									<img src="https://i.scdn.co/image/1ab13dfecda2976e30a0ab487700e241b0d5844f" alt="Métal Urbain" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/01BFjzKJQLgIZFhLHH4MNp"> Métal Urbain</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/05VrOAkxhj4x7wz79y98kL">
+									<img src="https://i.scdn.co/image/0c0a701798c33bcc8a865128e88b3fea8ccba5d7" alt="Metal Patriots" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/05VrOAkxhj4x7wz79y98kL"> Metal Patriots</a></p>
+							</div >
+						</li>
+						<li>            
+							<div class="col-md-12">
+								<a href="/artists/1ZRduahlu0iYm27dwn94K1">
+									<img src="https://i.scdn.co/image/fcde0b3da6e5c925e60e3efc30551bc836fbfbd2" alt="Metal Inquisitor" style="width:200px;height:200px;">
+								</a>								
+								<p><a href="/artists/1ZRduahlu0iYm27dwn94K1"> Metal Inquisitor</a></p>
+							</div >
+						</li>
+					</ul>
+				</div>
+				<div class="pagebuttons">
+					<p class="previousButton"><a class="left" href="/search/metal/previous" >previous</a></p>
+					<p class="nextButton"><a class="right" href="/search/metal/next" >next</a></p>
+				</div>
+        </div>
+    </body>	
+</html>
